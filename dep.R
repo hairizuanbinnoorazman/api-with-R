@@ -1,1 +1,5 @@
 install.packages("plumber")
+install.packages("googlesheets4")
+install.packages("googledrive")
+install.packages("dplyr")
+install.packages("base64enc")

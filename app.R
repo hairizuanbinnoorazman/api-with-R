@@ -1,4 +1,7 @@
 # plumber.R
+library(base64enc)
+
+source("script.R")
 
 #* Echo back the input
 #* @param msg The message to echo
@@ -21,5 +24,14 @@ function(){
 #* @post /sum
 function(a, b){
   as.numeric(a) + as.numeric(b)
+}
+
+#* Run analysis
+#* @param message The data that is to be provided
+#* @post /
+function(message) {
+  print(message["data"])
+  print(rawToChar(base64decode(message$data)))
+  doAnalysis()
 }
 
